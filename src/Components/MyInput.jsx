@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changed } from '../Store/vcbSlice';
 
-const MyInput = ({ parName, options }) => {
+const MyInput = ({ parName, options, value }) => {
   const vcbState = useSelector(state => state.vcb);
   const dispatch = useDispatch();
   const changeHandler = event => {
@@ -13,7 +13,7 @@ const MyInput = ({ parName, options }) => {
     //   actualy here we must change the state and based on the state we need to pass options into the input component (not all the options from the initial data but adjusted options from the gloal state)
   };
   return (
-    <select onChange={changeHandler} name={parName}>
+    <select onChange={changeHandler} name={parName} value={value}>
       {options.map(option => {
         return Object.keys(option).map(key => {
           return (

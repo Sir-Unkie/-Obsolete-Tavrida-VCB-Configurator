@@ -10,11 +10,12 @@ function App() {
   return (
     <div className='ppp'>
       <CombinedInputs>
-        {Object.keys(fields).map(key => {
+        {Object.keys(vcbState).map(key => {
           return (
             <MyInput
+              value={vcbState[key].value}
               key={key}
-              options={fields[key].options}
+              options={vcbState[key].adjustedOptions}
               parName={key}
             ></MyInput>
           );

@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import MyInput from './Components/MyInput.jsx';
+import { fields } from './assets/Initial Data';
+import CombinedInputs from './Components/CombinedInputs/CombinedInputs';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='ppp'>
+      <CombinedInputs>
+        {Object.keys(fields).map(key => {
+          return (
+            <MyInput
+              key={key}
+              options={fields[key].options}
+              parName={key}
+            ></MyInput>
+          );
+        })}
+      </CombinedInputs>
     </div>
   );
 }

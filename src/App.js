@@ -1,14 +1,14 @@
 import './App.scss';
-import MyInput from './Components/MyInput.jsx';
-import { fields } from './assets/Initial Data';
+import MyInput from './Components/MyInput/MyInput.jsx';
 import CombinedInputs from './Components/CombinedInputs/CombinedInputs';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import CustomButton from './Components/CustomButton/CustomButton';
 
 function App() {
   const vcbState = useSelector(state => state.vcb);
 
   return (
-    <div className='ppp'>
+    <div>
       <CombinedInputs>
         {Object.keys(vcbState).map(key => {
           return (
@@ -20,6 +20,7 @@ function App() {
             ></MyInput>
           );
         })}
+        <CustomButton></CustomButton>
       </CombinedInputs>
     </div>
   );

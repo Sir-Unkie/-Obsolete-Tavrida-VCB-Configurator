@@ -364,23 +364,14 @@ export const vcbSlice = createSlice({
 
       Object.values(state).forEach(parameter => {
         if (parameter.value !== 0) {
-          alert(parameter.value);
           //   here we must modify the adjusted options for each such parameter
-
           //   lets get the array of parameters to block
           const blocksArray = parameter.blocks;
-          alert(parameter.blocks);
           const paramsToAdjust = blocksArray.find(elem => {
             return parameter.value === Object.keys(elem)[0];
           });
 
           const arrayOfParamsToDelete = Object.values(paramsToAdjust)[0];
-          //   for each parameter from this array we need to loop through all the items and check if they are the same as adjusted options first key
-          // arrayOfParamsToDelete=[
-          //   { 0: [] },
-          //   { 1: [{ 'Main low terminal design': [6] }] },
-          //   { 2: [{ 'Main low terminal design': [1, 2, 3, 4, 5] }] },
-          // ]
 
           arrayOfParamsToDelete.forEach(param => {
             Object.values(param)[0].forEach(blockedOption => {

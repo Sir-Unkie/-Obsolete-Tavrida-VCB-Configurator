@@ -27,7 +27,9 @@ function App() {
         })}
         <div className='asd'>
           <CustomButton>Make an order</CustomButton>
-          <CustomButton clickHandler={clearFields}>Clear</CustomButton>
+          <CustomButton inverted={true} clickHandler={clearFields}>
+            Clear
+          </CustomButton>
         </div>
       </CombinedInputs>
       <VCBImages></VCBImages>

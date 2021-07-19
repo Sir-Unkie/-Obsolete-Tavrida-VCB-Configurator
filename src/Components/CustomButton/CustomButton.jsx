@@ -3,7 +3,14 @@ import styles from './CustomButton.module.scss';
 
 const CustomButton = props => {
   return (
-    <button onClick={props.clickHandler} className={styles.customButton}>
+    <button
+      onClick={props.clickHandler}
+      className={
+        props.inverted
+          ? `${styles.customButton} ${styles.inverted}`
+          : `${styles.customButton}`
+      }
+    >
       {props.children}
     </button>
   );

@@ -2,14 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   Customization: {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'No; 6NO+6NC aux contacts' },
       { 2: 'No; 1NO+1NC aux contacts' },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'No; 6NO+6NC aux contacts' },
       { 2: 'No; 1NO+1NC aux contacts' },
     ],
@@ -20,15 +20,15 @@ const initialState = {
     ],
   },
   'Rated voltage': {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: '12 kV' },
       { 2: '17,5 kV' },
       { 3: '17,5 kV Capacitive' },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: '12 kV' },
       { 2: '17,5 kV' },
       { 3: '17,5 kV Capacitive' },
@@ -61,9 +61,9 @@ const initialState = {
     ],
   },
   'Rated short circuit breaking current': {
-    value: 0,
-    options: [{ 0: '' }, { 1: '20 kA' }, { 2: '16 kA' }],
-    adjustedOptions: [{ 0: '' }, { 1: '20 kA' }, { 2: '16 kA' }],
+    value: '0',
+    options: [{ 0: 'Not set' }, { 1: '20 kA' }, { 2: '16 kA' }],
+    adjustedOptions: [{ 0: 'Not set' }, { 1: '20 kA' }, { 2: '16 kA' }],
     blocks: [
       { 0: [] },
       { 1: [{ 'Rated voltage': [3] }, { 'Main low terminal design': [5] }] },
@@ -76,16 +76,21 @@ const initialState = {
     ],
   },
   'Rated normal current': {
-    value: 0,
-    options: [{ 0: '' }, { 1: '800 A' }],
-    adjustedOptions: [{ 0: '' }, { 1: '800 A' }],
+    value: '0',
+    options: [{ 0: 'Not set' }, { 1: '800 A' }],
+    adjustedOptions: [{ 0: 'Not set' }, { 1: '800 A' }],
     blocks: [{ 0: [] }, { 1: [] }],
   },
   'Pole center distance': {
-    value: 0,
-    options: [{ 0: '' }, { 1: '150 mm' }, { 2: '180 mm' }, { 3: '210 mm' }],
+    value: '0',
+    options: [
+      { 0: 'Not set' },
+      { 1: '150 mm' },
+      { 2: '180 mm' },
+      { 3: '210 mm' },
+    ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: '150 mm' },
       { 2: '180 mm' },
       { 3: '210 mm' },
@@ -108,9 +113,9 @@ const initialState = {
     ],
   },
   'Main low terminal design': {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'One main lower terminal for PCD 150 mm' },
       { 2: 'One main lower terminal for PCD 180 mm' },
       { 3: 'One main lower terminal for PCD 210 mm' },
@@ -119,7 +124,7 @@ const initialState = {
       { 6: 'One main lower terminal for PCD 210 mm (1NO+1NC)' },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'One main lower terminal for PCD 150 mm' },
       { 2: 'One main lower terminal for PCD 180 mm' },
       { 3: 'One main lower terminal for PCD 210 mm' },
@@ -173,14 +178,14 @@ const initialState = {
     ],
   },
   'CM settings': {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'Basic circuit breaker functionality' },
       { 2: 'Without CM' },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'Basic circuit breaker functionality' },
       { 2: 'Without CM' },
     ],
@@ -191,15 +196,15 @@ const initialState = {
     ],
   },
   'Rated auxiliary supply voltage': {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: '24-60 V DC' },
       { 2: '110-220 V AC/DC' },
       { 3: 'Without CM' },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: '24-60 V DC' },
       { 2: '110-220 V AC/DC' },
       { 3: 'Without CM' },
@@ -227,9 +232,9 @@ const initialState = {
     ],
   },
   Language: {
-    value: 0,
+    value: '0',
     options: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'English (for 24-60 V DC auxiliary supply voltage)' },
       { 2: 'English (for 110-220 V AC/DC auxiliary supply voltage)' },
       { 3: 'English (Without CM)' },
@@ -249,7 +254,7 @@ const initialState = {
       },
     ],
     adjustedOptions: [
-      { 0: '' },
+      { 0: 'Not set' },
       { 1: 'English (for 24-60 V DC auxiliary supply voltage)' },
       { 2: 'English (for 110-220 V AC/DC auxiliary supply voltage)' },
       { 3: 'English (Without CM)' },
@@ -387,25 +392,21 @@ export const vcbSlice = createSlice({
           });
         }
       });
-
-      //   del.forEach(parameter => {
-      //     Object.values(parameter).forEach(par => {
-      //       //   state['Customization'][item] = item;
-      //       par.forEach(item => {
-      //         const index = state[
-      //           Object.keys(parameter)[0]
-      //         ].adjustedOptions.findIndex(elem => {
-      //           return Object.keys(elem)[0] === item.toString();
-      //         });
-      //         state[Object.keys(parameter)[0]].adjustedOptions.splice(index, 1);
-      //       });
-      //     });
-      //   });
+    },
+    clear: state => {
+      // set to initial state all the adjusted options
+      Object.keys(state).forEach(parameter => {
+        state[parameter].adjustedOptions = [...state[parameter].options];
+      });
+      //   clear all values
+      Object.values(state).forEach(parameter => {
+        parameter.value = '0';
+      });
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changed } = vcbSlice.actions;
+export const { changed, clear } = vcbSlice.actions;
 
 export default vcbSlice.reducer;

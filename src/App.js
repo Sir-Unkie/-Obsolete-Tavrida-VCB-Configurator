@@ -1,14 +1,19 @@
 import './App.scss';
+import { useSelector, useDispatch } from 'react-redux';
 import MyInput from './Components/MyInput/MyInput.jsx';
 import CombinedInputs from './Components/CombinedInputs/CombinedInputs';
-import { useSelector } from 'react-redux';
 import CustomButton from './Components/CustomButton/CustomButton';
+import VCBImages from './Components/VCBImages/VCBImages';
+import { clear } from './Store/vcbSlice';
 
 function App() {
+  const dispatch = useDispatch();
   const vcbState = useSelector(state => state.vcb);
-
+  const clearFields = () => {
+    dispatch(clear());
+  };
   return (
-    <div>
+    <div className='app'>
       <CombinedInputs>
         {Object.keys(vcbState).map(key => {
           return (
@@ -20,8 +25,12 @@ function App() {
             ></MyInput>
           );
         })}
-        <CustomButton></CustomButton>
+        <div className='asd'>
+          <CustomButton>Make an order</CustomButton>
+          <CustomButton clickHandler={clearFields}>Clear</CustomButton>
+        </div>
       </CombinedInputs>
+      <VCBImages></VCBImages>
     </div>
   );
 }

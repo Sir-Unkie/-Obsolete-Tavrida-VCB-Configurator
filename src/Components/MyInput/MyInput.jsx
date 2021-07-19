@@ -10,22 +10,26 @@ const MyInput = ({ parName, options, value }) => {
   };
   return (
     <div className={styles.customSelect}>
-      <select
-        onChange={changeHandler}
-        name={parName}
-        value={value}
-        className={styles.selectField}
-      >
-        {options.map(option => {
-          return Object.keys(option).map(key => {
-            return (
-              <option key={key} value={key}>
-                {option[key]}
-              </option>
-            );
-          });
-        })}
-      </select>
+      <label className={styles.label}>{`${parName}:`}</label>
+      <div className={styles.inputAndCode}>
+        <select
+          onChange={changeHandler}
+          name={parName}
+          value={value}
+          className={styles.selectField}
+        >
+          {options.map(option => {
+            return Object.keys(option).map(key => {
+              return (
+                <option key={key} value={key}>
+                  {option[key]}
+                </option>
+              );
+            });
+          })}
+        </select>
+        <div className={styles.code}>{value === '0' ? '' : value}</div>
+      </div>
     </div>
   );
 };

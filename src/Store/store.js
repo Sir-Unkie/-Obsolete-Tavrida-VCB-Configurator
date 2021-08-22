@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import vcbReducer from './vcbSlice';
+import LDvcbReducer from './LDvcbSlice';
+import MDvcbReducer from './MDvcbSlice';
 
 export const store = configureStore({
   reducer: {
-    vcb: vcbReducer,
+    LDvcb: LDvcbReducer,
+    MDvcb: MDvcbReducer,
   },
 });

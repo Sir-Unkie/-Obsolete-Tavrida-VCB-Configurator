@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { changed } from '../../Store/vcbSlice';
+import { changed } from '../../Store/LDvcbSlice';
 import styles from './MyInput.module.scss';
 
 const MyInput = ({ parName, options, value }) => {

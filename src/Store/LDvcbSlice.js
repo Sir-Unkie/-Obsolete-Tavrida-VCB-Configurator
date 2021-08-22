@@ -354,8 +354,8 @@ const initialState = {
   },
 };
 
-export const vcbSlice = createSlice({
-  name: 'vcb',
+export const LDvcbSlice = createSlice({
+  name: 'LDvcb',
   initialState,
   reducers: {
     changed: (state, action) => {
@@ -407,6 +407,6 @@ export const vcbSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { changed, clear } = vcbSlice.actions;
+export const { changed, clear } = LDvcbSlice.actions;
 
-export default vcbSlice.reducer;
+export default LDvcbSlice.reducer;

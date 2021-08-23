@@ -1,0 +1,12 @@
+.navigation {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+  font-size: 1.6rem;
+}
+
+.signBtn {
+  cursor: pointer;
+}

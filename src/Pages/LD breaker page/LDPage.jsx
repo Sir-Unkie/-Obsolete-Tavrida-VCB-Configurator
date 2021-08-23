@@ -3,7 +3,7 @@ import CombinedInputs from '../../Components/CombinedInputs/CombinedInputs';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import MyInput from '../../Components/MyInput/MyInput';
 import VCBImages from '../../Components/VCBImages/VCBImages';
-
+import styles from './LDPage.module.scss';
 import { clear } from '../../Store/LDvcbSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -15,7 +15,7 @@ const LDPage = () => {
   };
 
   return (
-    <React.Fragment>
+    <div className={styles.LDcontainer}>
       <CombinedInputs>
         {Object.keys(LDvcbState).map(key => {
           return (
@@ -35,7 +35,7 @@ const LDPage = () => {
         </div>
       </CombinedInputs>
       <VCBImages></VCBImages>
-    </React.Fragment>
+    </div>
   );
 };
 

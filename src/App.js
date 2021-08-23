@@ -1,34 +1,56 @@
 import './App.scss';
-import { BrowserRouter, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { userChanged } from './Store/UserSlice';
 
 import LDPage from './Pages/LD breaker page/LDPage';
 import MDPage from './Pages/MD breaker page/MDPage';
-import MyInput from './Components/MyInput/MyInput.jsx';
-import CombinedInputs from './Components/CombinedInputs/CombinedInputs';
-import CustomButton from './Components/CustomButton/CustomButton';
-import VCBImages from './Components/VCBImages/VCBImages';
-import { clear } from './Store/LDvcbSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import WelcomePage from './Pages/WelcomePage/WelcomePage';
+
+import Header from './Components/Header/Header';
+
+import { auth } from './Firebase/firebase.utils';
+import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpPage';
 
 function App() {
   const dispatch = useDispatch();
-  const vcbState = useSelector(state => state.LDvcb);
-  const clearFields = () => {
-    dispatch(clear());
-  };
+  const userState = useSelector(state => state.User);
+  useEffect(() => {
+    const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      if (user !== null) {
+        dispatch(userChanged(user.displayName));
+        localStorage.setItem('user', user.displayName);
+      }
+    });
+    return () => {
+      unsubscribeFromAuth();
+      localStorage.clear();
+    };
+  }, [dispatch]);
+
   return (
-    <div className='app'>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className='app'>
+        <Header></Header>
         <Switch>
+          <Route path='/' exact>
+            <WelcomePage></WelcomePage>
+          </Route>
+          <Route path='/SignIn'>
+            {!userState && <SignInSignUpPage></SignInSignUpPage>}
+          </Route>
           <Route path='/LD'>
-            <LDPage></LDPage>
+            {userState && <LDPage />}
+            {!userState && <Redirect to='/'></Redirect>}
           </Route>
           <Route path='/MD'>
-            <MDPage></MDPage>
+            {userState && <MDPage />}
+            {!userState && <Redirect to='/'></Redirect>}
           </Route>
         </Switch>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

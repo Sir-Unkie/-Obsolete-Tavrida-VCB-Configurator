@@ -1,0 +1,18 @@
+.header {
+  border-bottom: 1px solid black;
+  font-size: 1.6rem;
+}
+.headerContainer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //   border: 1px solid red;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

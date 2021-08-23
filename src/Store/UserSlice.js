@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = localStorage.getItem('user');
+const initialState = { displayName: localStorage.getItem('user') };
+// const initialState = null;
 
 export const userSlice = createSlice({
   name: 'userSlice',
   initialState,
   reducers: {
     userChanged: (state, action) => {
-      return (state = { ...state, displayName: action.payload });
+      return (state = { displayName: action.payload });
     },
     userClear: state => {
       return null;

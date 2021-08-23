@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SignUp.styles.scss';
+import { useHistory } from 'react-router-dom';
 import FormInput from '../form-input/FormInput.component';
 import CustomButton from '../custom-button/CustomButton.component';
 import { auth } from '../../Firebase/firebase.utils';
@@ -8,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { userChanged } from '../../Store/UserSlice';
 
 const SignUp = props => {
+  let history = useHistory();
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
     displayName: '',
@@ -41,6 +43,7 @@ const SignUp = props => {
         password: '',
         confirmPassword: '',
       });
+      history.push('/');
     } catch (error) {
       console.log(error.message);
     }

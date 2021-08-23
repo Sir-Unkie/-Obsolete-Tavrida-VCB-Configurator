@@ -13,6 +13,12 @@ import Header from './Components/Header/Header';
 import { auth } from './Firebase/firebase.utils';
 import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpPage';
 
+// /////////////////////////////////////////////////////////////////////////
+
+// make home page content dependent on auth status. - when logged in - pick the braker to work with
+
+// //////////////////////////////////////////////////////////////////////////
+
 function App() {
   const dispatch = useDispatch();
   const userState = useSelector(state => state.User);

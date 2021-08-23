@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 import './SignIn.styles.scss';
 import FormInput from '../form-input/FormInput.component';
 import CustomButton from '../custom-button/CustomButton.component';
@@ -7,6 +8,7 @@ import { signInWithGoogle, auth } from '../../Firebase/firebase.utils';
 const SignIn = props => {
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
+  let history = useHistory();
 
   const submitHandler = async e => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const SignIn = props => {
     }
     setEmail('');
     setpassword('');
+    history.push('/');
   };
 
   const signInWithGoogleHandler = async () => {
@@ -29,6 +32,7 @@ const SignIn = props => {
     } catch (error) {
       console.log(error.message);
     }
+    history.push('/');
   };
 
   const onChangeHandler = e => {

@@ -1,0 +1,43 @@
+.optionsContainer {
+  border: 1px solid blue;
+  padding-top: 5vh;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+.option {
+  //   border: 1px solid red;
+  width: 33%;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: hsl(0, 0%, 97%);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.267);
+
+  .heading {
+    margin-bottom: 1rem;
+  }
+
+  .paragraph {
+    font-size: 1.6rem;
+  }
+
+  .link:link,
+  .link:active,
+  .link:visited {
+    margin-top: 2rem;
+    display: inline-block;
+    min-width: 18%;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.2rem;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    align-self: flex-end;
+    border-radius: 0.5rem;
+  }
+}

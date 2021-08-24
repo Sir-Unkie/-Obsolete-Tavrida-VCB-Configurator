@@ -13,7 +13,7 @@ const MDPage = () => {
 
   return (
     <VCBConfigurator
-      CodeTemplate={'LD'}
+      CodeTemplate={'MD'}
       clearFields={clearFields}
       vcbState={MDvcbState}
       imageUrl={'/img/MDbreaker.png'}

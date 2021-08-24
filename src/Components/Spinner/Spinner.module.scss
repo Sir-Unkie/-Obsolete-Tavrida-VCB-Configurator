@@ -1,0 +1,23 @@
+.outer {
+  margin-left: 3rem;
+}
+.inner {
+  width: 3.4rem;
+  height: 3.4rem;
+  background-color: transparent;
+  border-top: 3px solid rgb(255, 255, 255);
+  border-bottom: 3px solid rgb(248, 248, 248);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 2s infinite ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

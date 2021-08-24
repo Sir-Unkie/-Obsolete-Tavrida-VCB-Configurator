@@ -13,7 +13,7 @@ const HDPage = () => {
 
   return (
     <VCBConfigurator
-      CodeTemplate={'LD'}
+      CodeTemplate={'HD'}
       clearFields={clearFields}
       vcbState={HDvcbState}
       imageUrl={'/img/HDbreaker.png'}

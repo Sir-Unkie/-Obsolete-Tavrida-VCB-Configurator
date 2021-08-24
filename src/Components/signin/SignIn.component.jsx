@@ -14,10 +14,7 @@ const SignIn = props => {
     e.preventDefault();
     document.activeElement.blur();
     try {
-      const userCredentials = await auth.signInWithEmailAndPassword(
-        email,
-        password
-      );
+      await auth.signInWithEmailAndPassword(email, password);
     } catch (error) {
       alert(error.message);
     }

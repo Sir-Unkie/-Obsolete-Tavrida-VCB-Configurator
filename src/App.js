@@ -16,7 +16,11 @@ import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpP
 
 // /////////////////////////////////////////////////////////////////////////
 
-// make home page content dependent on auth status. - when logged in - pick the braker to work with
+// prepare the images (right aspect ration and compressed png)
+// Make SignIn page responsive and styled the correct way
+// make tavrida electric to be a logo
+// fix the netlify issue
+// add redirects
 
 // //////////////////////////////////////////////////////////////////////////
 

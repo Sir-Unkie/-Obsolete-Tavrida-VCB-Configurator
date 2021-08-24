@@ -5,7 +5,7 @@ import SignUp from '../../../Components/sign-up/SignUp.component';
 
 const SignInSignUpPage = () => {
   return (
-    <div>
+    <div className={styles.signInContainer}>
       <SignIn></SignIn>
       <SignUp></SignUp>
     </div>

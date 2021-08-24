@@ -25,16 +25,7 @@ const Options = () => {
             type for rated continuous currents up to 1250 A and rated voltages
             up to 17.5 kV with extraordinarily small size and weight.
           </p>
-          <br />
-          <p className={styles.paragraph}>
-            Using the same single-axis design philosophy as the LD series, the
-            MD series brings even more innovation in a compact package. At a
-            height of only 35 cm, and as narrow as the LD type, the MD circuit
-            breaker handles currents as high as 1250 A continuous and 31.5 kA
-            short-time and interrupting. Together with any spatial orientation
-            capability, the MD series circuit breaker is second to none in terms
-            of switchgear design optimization and mounting simplicity.
-          </p>
+
           <Link className={styles.link} to='/MD'>
             MD series
           </Link>

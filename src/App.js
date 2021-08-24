@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       if (user !== null) {
+        console.log('asdasdsad');
         dispatch(userChanged(user.displayName));
         localStorage.setItem('user', user.displayName);
       }

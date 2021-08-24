@@ -19,19 +19,57 @@ const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
-      <NavLink to='/'>Home</NavLink>
-      <NavLink to='/LD'>LD series</NavLink>
-      <NavLink to='/MD'>MD series</NavLink>
-      {userState && (
-        <div onClick={signOutHandler} className={styles.signBtn}>
-          Sign Out
-        </div>
-      )}
-      {!userState && (
-        <Link to='./SignIn' className={styles.signBtn}>
-          Sign In
-        </Link>
-      )}
+      <ul>
+        <li>
+          <NavLink
+            activeClassName={styles.active}
+            className={styles.navItem}
+            to='/'
+            exact
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName={styles.active}
+            className={styles.navItem}
+            to='/LD'
+          >
+            LD series
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName={styles.active}
+            className={styles.navItem}
+            to='/MD'
+          >
+            MD series
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName={styles.active}
+            className={styles.navItem}
+            to='/HD'
+          >
+            HD series
+          </NavLink>
+        </li>
+        <li>
+          {userState && (
+            <div className={styles.navItem} onClick={signOutHandler}>
+              Sign Out
+            </div>
+          )}
+          {!userState && (
+            <Link className={styles.navItem} to='./SignIn'>
+              Sign In
+            </Link>
+          )}
+        </li>
+      </ul>
     </nav>
   );
 };

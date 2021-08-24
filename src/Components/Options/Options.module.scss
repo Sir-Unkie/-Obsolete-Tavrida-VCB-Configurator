@@ -1,14 +1,21 @@
 .optionsContainer {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   padding-top: 5vh;
   width: 80%;
   margin: auto;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0rem;
+}
+.textArea {
+  width: 40%;
 }
 
 .option {
-  //   border: 1px solid red;
-  width: 33%;
+  // border: 1px solid red;
+  margin: 0;
+  width: 100%;
   padding: 2rem;
   margin-bottom: 3rem;
   background-color: hsl(0, 0%, 97%);

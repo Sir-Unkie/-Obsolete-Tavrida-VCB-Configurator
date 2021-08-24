@@ -1,12 +1,30 @@
 .navigation {
-  border: 1px solid red;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 3rem;
-  font-size: 1.6rem;
-}
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6rem;
+    font-size: 2rem;
 
-.signBtn {
-  cursor: pointer;
+    li {
+      list-style: none;
+    }
+  }
+}
+.navItem,
+.navItem:link,
+.navItem:visited {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+    color: green;
+  }
+
+  &.active {
+    color: green;
+    border-bottom: 1px solid green;
+    font-weight: bold;
+  }
 }

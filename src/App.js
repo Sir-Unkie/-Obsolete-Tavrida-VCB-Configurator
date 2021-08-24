@@ -6,6 +6,7 @@ import { userChanged } from './Store/UserSlice';
 
 import LDPage from './Pages/LD breaker page/LDPage';
 import MDPage from './Pages/MD breaker page/MDPage';
+import HDPage from './Pages/HDPage/HDPage';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
 
 import Header from './Components/Header/Header';
@@ -52,6 +53,10 @@ function App() {
           </Route>
           <Route path='/MD'>
             {userState && <MDPage />}
+            {!userState && <Redirect to='/'></Redirect>}
+          </Route>
+          <Route path='/HD'>
+            {userState && <HDPage />}
             {!userState && <Redirect to='/'></Redirect>}
           </Route>
         </Switch>

@@ -1,8 +1,24 @@
 import React from 'react';
-import styles from './HDPage.module.scss';
+import { clear } from '../../Store/HDvcbSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { changed } from '../../Store/HDvcbSlice';
+import VCBConfigurator from '../../Components/VCBConfigurator/VCBConfigurator';
 
 const HDPage = () => {
-  return <div>HD page</div>;
+  const dispatch = useDispatch();
+  const HDvcbState = useSelector(state => state.HDvcb);
+  const clearFields = () => {
+    dispatch(clear());
+  };
+
+  return (
+    <VCBConfigurator
+      clearFields={clearFields}
+      vcbState={HDvcbState}
+      imageUrl={'/img/HDbreaker.png'}
+      changed={changed}
+    ></VCBConfigurator>
+  );
 };
 
 export default HDPage;

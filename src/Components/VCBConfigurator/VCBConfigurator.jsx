@@ -5,7 +5,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import MyInput from '../MyInput/MyInput';
 import VCBImage from '../VCBImage/VCBImage';
 
-const VCBConfigurator = ({ vcbState, clearFields, imageUrl }) => {
+const VCBConfigurator = ({ vcbState, clearFields, imageUrl, changed }) => {
   return (
     <div className={styles.VCBcontainer}>
       <CombinedInputs>
@@ -16,6 +16,7 @@ const VCBConfigurator = ({ vcbState, clearFields, imageUrl }) => {
               key={key}
               options={vcbState[key].adjustedOptions}
               parName={key}
+              changed={changed}
             ></MyInput>
           );
         })}

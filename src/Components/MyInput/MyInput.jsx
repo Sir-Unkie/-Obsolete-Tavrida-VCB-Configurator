@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { changed } from '../../Store/LDvcbSlice';
 import styles from './MyInput.module.scss';
 
-const MyInput = ({ parName, options, value }) => {
+const MyInput = ({ parName, options, value, changed }) => {
   const dispatch = useDispatch();
   const changeHandler = event => {
     dispatch(changed({ par: event.target.name, value: event.target.value }));

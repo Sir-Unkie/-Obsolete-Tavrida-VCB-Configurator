@@ -13,6 +13,11 @@ html {
     font-size: 55%;
   }
 }
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 37%;
+  }
+}
 
 body {
   margin: 0;

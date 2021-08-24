@@ -20,7 +20,6 @@ import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpP
 // Make SignIn page responsive and styled the correct way
 // make tavrida electric to be a logo
 // fix the netlify issue
-// add redirects
 
 // //////////////////////////////////////////////////////////////////////////
 

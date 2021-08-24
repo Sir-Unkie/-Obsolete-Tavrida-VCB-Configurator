@@ -23,7 +23,8 @@ const SignIn = props => {
     history.push('/');
   };
 
-  const signInWithGoogleHandler = async () => {
+  const signInWithGoogleHandler = async e => {
+    e.preventDefault();
     try {
       await signInWithGoogle();
     } catch (error) {

@@ -7,14 +7,23 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 7rem;
+
+  @media screen and (max-width: 1600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+  }
 }
 .textArea {
+  box-sizing: border-box;
   width: 45%;
+  @media screen and (max-width: 1600px) {
+    width: 100%;
+  }
 }
 
 .option {
   // border: 1px solid red;
-  margin: 0;
   width: 100%;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -24,6 +33,12 @@
   flex-direction: column;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.267);
 
+  @media screen and (max-width: 1600px) {
+    max-width: 80%;
+    margin: 0 auto 3rem auto;
+    // gap: 0;
+  }
+
   .heading {
     margin-bottom: 1rem;
   }
@@ -31,7 +46,7 @@
   .paragraph {
     font-size: 1.6rem;
   }
-
+  .link,
   .link:link,
   .link:active,
   .link:visited {
@@ -42,9 +57,16 @@
     font-size: 2rem;
     padding: 1.2rem;
     background-color: green;
+    border: 2px solid green;
     color: white;
     text-decoration: none;
     align-self: flex-end;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
+  }
+
+  .link:hover {
+    background-color: white;
+    border: 2px solid green;
+    color: green;
   }
 }

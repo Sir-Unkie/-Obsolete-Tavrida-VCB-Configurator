@@ -105,7 +105,9 @@ const SignUp = props => {
           id='CPI1'
           onChange={changeHandler}
         ></FormInput>
-        <CustomButton type='submit'>Create an account</CustomButton>
+        <div className='stretch'>
+          <CustomButton type='submit'>Create an account</CustomButton>
+        </div>
       </form>
     </div>
   );

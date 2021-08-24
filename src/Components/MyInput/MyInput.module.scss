@@ -1,62 +1,15 @@
 .customSelect {
   position: relative;
-  &::after {
-    // this one is for opera browser to hide the borders
-    position: absolute;
-    content: '';
-    top: 45%;
-    right: 20%;
-    left: 0;
-    bottom: 0;
-    background-color: transparent;
-    border-top: 1px solid rgb(255, 255, 255);
-    border-left: 1px solid rgb(255, 255, 255);
-    border-right: 1px solid rgb(255, 255, 255);
-    pointer-events: none;
-  }
-
-  //   border-radius: 0.5rem;
-  //   &::after {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0%;
-  //     right: 93%;
-  //     bottom: 0;
-  //     left: 0;
-  //     background-color: hsl(128, 53%, 38%);
-  //     border-top-left-radius: 0.5rem;
-  //     border-bottom-left-radius: 0.5rem;
-  //     pointer-events: none;
-  //   }
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     right: 93%;
-  //     bottom: 0;
-  //     left: 0;
-  //     background-color: hsl(0, 0%, 100%);
-  //     clip-path: polygon(20% 35%, 50% 65%, 80% 35%, 20% 35%);
-  //     border-top-right-radius: 0.5rem;
-  //     border-bottom-right-radius: 0.5rem;
-  //     pointer-events: none;
-  //     z-index: 300;
-  //   }
 }
 
 .selectField {
   width: 80%;
   border: 0;
   border-bottom: 1px solid black;
-  //   padding: 1rem 2rem 1rem 7rem;
   padding: 0.7rem 0rem;
   font-size: 1.5rem;
-  //   border-bottom-left-radius: 0.5rem;
-  //   background-color: hsl(0, 0%, 100%);
   color: rgb(53, 53, 53);
-  //   appearance: none;
   outline: none;
-  //   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.253);
   position: relative;
 
   &:hover {
@@ -64,7 +17,7 @@
   }
 
   option {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     background-color: hsl(0, 0%, 100%);
     border: none;
     outline: none;

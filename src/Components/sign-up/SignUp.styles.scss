@@ -1,9 +1,10 @@
 .sign-up {
-  font-style: inherit;
   font-size: 2rem;
   display: flex;
   flex-direction: column;
   width: 45%;
+  // border: 1px solid red;
+  align-items: start;
 
   @media screen and (max-width: 800px) {
     width: 70%;
@@ -12,5 +13,16 @@
 
   .title {
     margin: 10px 0;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .stretch {
+    display: flex;
+    flex-direction: column;
   }
 }

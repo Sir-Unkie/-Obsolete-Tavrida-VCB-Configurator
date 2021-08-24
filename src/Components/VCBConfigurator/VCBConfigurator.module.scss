@@ -1,6 +1,8 @@
 .VCBcontainer {
+  max-width: 80%;
+  margin: 5rem auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 5rem;
+  justify-content: space-between;
+  //   padding: 5rem;
 }

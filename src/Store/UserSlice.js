@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = localStorage.getItem('user')
-  ? { displayName: localStorage.getItem('user') }
+  ? {
+      displayName: localStorage.getItem('user'),
+      email: localStorage.getItem('email'),
+    }
   : null;
 
 export const userSlice = createSlice({
@@ -9,7 +12,10 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     userChanged: (state, action) => {
-      return (state = { displayName: action.payload });
+      return (state = {
+        displayName: action.payload.displayName,
+        email: action.payload.email,
+      });
     },
     userClear: state => {
       return null;

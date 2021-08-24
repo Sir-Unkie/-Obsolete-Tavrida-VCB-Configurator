@@ -13,6 +13,7 @@ const LDPage = () => {
 
   return (
     <VCBConfigurator
+      CodeTemplate={'LD'}
       clearFields={clearFields}
       vcbState={LDvcbState}
       imageUrl={'/img/LDCrossSection.png'}

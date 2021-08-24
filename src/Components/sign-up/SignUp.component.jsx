@@ -35,8 +35,14 @@ const SignUp = props => {
       userCredential.user.updateProfile({
         displayName: userData.displayName,
       });
-      dispatch(userChanged(userData.displayName));
+      dispatch(
+        userChanged({
+          displayName: userData.displayName,
+          email: userData.email,
+        })
+      );
       localStorage.setItem('user', userData.displayName);
+      localStorage.setItem('user', userData.email);
       setUserData({
         displayName: '',
         email: '',

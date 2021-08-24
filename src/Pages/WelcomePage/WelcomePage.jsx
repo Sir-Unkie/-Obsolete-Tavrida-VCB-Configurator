@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './WelcomePage.module.scss';
-import SignIn from '../../Components/signin/SignIn.component';
-import SignUp from '../../Components/sign-up/SignUp.component';
 import Options from '../../Components/Options/Options';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';

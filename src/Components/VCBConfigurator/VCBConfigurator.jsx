@@ -5,7 +5,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import MyInput from '../MyInput/MyInput';
 import VCBImage from '../VCBImage/VCBImage';
 
-const VCBConfigurator = ({ vcbState, clearFields }) => {
+const VCBConfigurator = ({ vcbState, clearFields, imageUrl }) => {
   return (
     <div className={styles.VCBcontainer}>
       <CombinedInputs>
@@ -26,7 +26,7 @@ const VCBConfigurator = ({ vcbState, clearFields }) => {
           </CustomButton>
         </div>
       </CombinedInputs>
-      <VCBImage backgroundImage={'here i shou put the path'}></VCBImage>
+      <VCBImage imageUrl={imageUrl}></VCBImage>
     </div>
   );
 };

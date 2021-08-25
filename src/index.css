@@ -5,20 +5,17 @@
   padding: 0px;
 }
 html {
-  overflow-x: hidden;
   font-size: 62.5%;
 }
 
 @media screen and (max-width: 1600px) {
   html {
     font-size: 55%;
-    overflow-x: hidden;
   }
 }
 @media screen and (max-width: 600px) {
   html {
     font-size: 45%;
-    overflow-x: hidden;
   }
 }
 

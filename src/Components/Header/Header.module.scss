@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    height: 8rem;
+  }
 }
 
 .greeting {
@@ -17,6 +21,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1600px) {
+    width: 90%;
+  }
 }
 
 .leftSide {

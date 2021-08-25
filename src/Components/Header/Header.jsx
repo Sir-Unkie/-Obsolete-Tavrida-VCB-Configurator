@@ -12,7 +12,9 @@ const Header = () => {
       <div className={styles.headerContainer}>
         <div className={styles.leftSide}>
           <div>
-            <TelLogo className={styles.tavridaLogo}></TelLogo>
+            <a href='https://www.tavrida.com/' target='_blank' rel='noreferrer'>
+              <TelLogo className={styles.tavridaLogo}></TelLogo>
+            </a>
           </div>
           <div className={styles.greeting}>
             Welcome

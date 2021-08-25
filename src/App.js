@@ -1,25 +1,32 @@
 import './App.scss';
-import { useEffect } from 'react';
+
+import React, { useEffect, Suspense } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { userChanged } from './Store/UserSlice';
 
-import LDPage from './Pages/LD breaker page/LDPage';
-import MDPage from './Pages/MD breaker page/MDPage';
-import HDPage from './Pages/HDPage/HDPage';
-import WelcomePage from './Pages/WelcomePage/WelcomePage';
+// import LDPage from './Pages/LD breaker page/LDPage';
+// import MDPage from './Pages/MD breaker page/MDPage';
+// import HDPage from './Pages/HDPage/HDPage';
+// import WelcomePage from './Pages/WelcomePage/WelcomePage';
+// import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpPage';
 
 import Header from './Components/Header/Header';
-
+import SuspenseSpinner from './Components/SuspenseSpinner/SuspenseSpinner';
 import { auth } from './Firebase/firebase.utils';
-import SignInSignUpPage from './Pages/WelcomePage/SignInSignUpPage/SignInSignUpPage';
 
+const LDPage = React.lazy(() => import('./Pages/LD breaker page/LDPage'));
+const MDPage = React.lazy(() => import('./Pages/MD breaker page/MDPage'));
+const HDPage = React.lazy(() => import('./Pages/HDPage/HDPage'));
+const WelcomePage = React.lazy(() => import('./Pages/WelcomePage/WelcomePage'));
+const SignInSignUpPage = React.lazy(() =>
+  import('./Pages/WelcomePage/SignInSignUpPage/SignInSignUpPage')
+);
 // /////////////////////////////////////////////////////////////////////////
 
 // prepare the images (right aspect ration and compressed png)
-// Make SignIn page responsive and styled the correct way
 // make tavrida electric to be a logo
-// fix the netlify issue
+// Add lazy loading
 
 // //////////////////////////////////////////////////////////////////////////
 
@@ -52,21 +59,39 @@ function App() {
         <Header></Header>
         <Switch>
           <Route path='/' exact>
-            <WelcomePage></WelcomePage>
+            <Suspense fallback={<SuspenseSpinner />}>
+              <WelcomePage></WelcomePage>
+            </Suspense>
           </Route>
           <Route path='/SignIn'>
-            {!userState && <SignInSignUpPage></SignInSignUpPage>}
+            {!userState && (
+              <Suspense fallback={<SuspenseSpinner />}>
+                <SignInSignUpPage></SignInSignUpPage>
+              </Suspense>
+            )}
           </Route>
           <Route path='/LD'>
-            {userState && <LDPage />}
+            {userState && (
+              <Suspense fallback={<SuspenseSpinner />}>
+                <LDPage />
+              </Suspense>
+            )}
             {!userState && <Redirect to='/'></Redirect>}
           </Route>
           <Route path='/MD'>
-            {userState && <MDPage />}
+            {userState && (
+              <Suspense fallback={<SuspenseSpinner />}>
+                <MDPage />
+              </Suspense>
+            )}
             {!userState && <Redirect to='/'></Redirect>}
           </Route>
           <Route path='/HD'>
-            {userState && <HDPage />}
+            {userState && (
+              <Suspense fallback={<SuspenseSpinner />}>
+                <HDPage />
+              </Suspense>
+            )}
             {!userState && <Redirect to='/'></Redirect>}
           </Route>
         </Switch>

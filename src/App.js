@@ -25,9 +25,8 @@ const SignInSignUpPage = React.lazy(() =>
 // /////////////////////////////////////////////////////////////////////////
 
 // prepare the images (right aspect ration and compressed png)
-// make tavrida electric to be a logo
-// Add lazy loading
-
+// make a mobile navbar
+// make tel ico for browser tab
 // //////////////////////////////////////////////////////////////////////////
 
 function App() {

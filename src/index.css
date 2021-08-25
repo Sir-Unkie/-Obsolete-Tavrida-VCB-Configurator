@@ -5,23 +5,26 @@
   padding: 0px;
 }
 html {
-  font-size: 62.5%;
   overflow-x: hidden;
+  font-size: 62.5%;
 }
 
 @media screen and (max-width: 1600px) {
   html {
     font-size: 55%;
+    overflow-x: hidden;
   }
 }
 @media screen and (max-width: 600px) {
   html {
     font-size: 45%;
+    overflow-x: hidden;
   }
 }
 
 body {
   overflow-x: hidden;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -30,6 +33,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
+}
+
+body > * {
+  overflow-x: hidden;
 }
 
 code {

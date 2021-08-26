@@ -1,11 +1,11 @@
 # Tavrida Electric selection tool
 
 ![HD breaker](https://i.ibb.co/dWrsCXY/Tavrida-Final-Monitor.png)
-This is a project for a Tavrida Electric Global company.
+This is a project for Tavrida Electric Global company.
 The main goal of the application is to provide the convinient web interface for the customers, so they can configure and order the product they need. With the help of this application customers can assemble the code of the product by choosing the apropriate main technical parameters of the product.
 In addition customers can send a quote for the product to the company.
 
-## [Live Website](https://vcb-configurator.netlify.app)
+## The live version of the application is available here: [Live Website](https://vcb-configurator.netlify.app)
 
 # Technology stack
 
@@ -13,7 +13,21 @@ In addition customers can send a quote for the product to the company.
 - Redux (Redux toolkit)
 - React Router
 - SCSS modules
-- Firebase
+- Firebase (authentication)
+
+# Main Features
+
+## Ability to configure the product and send the request on the fly
+
+![Sending a quote](https://s9.gifyu.com/images/Mygif9f18370dd05c33d7.gif)
+
+## Google and email/password authentication
+
+![Authentication](https://s9.gifyu.com/images/Mygif2.gif)
+
+## Responsive design
+
+![Responsive design](https://s9.gifyu.com/images/Mygif3.gif)
 
 # Getting Started with Create React App
 

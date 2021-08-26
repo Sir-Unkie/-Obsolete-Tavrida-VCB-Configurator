@@ -25,7 +25,6 @@ const SignInSignUpPage = React.lazy(() =>
 // /////////////////////////////////////////////////////////////////////////
 
 // prepare the images (right aspect ration and compressed png)
-// make a mobile navbar
 // make tel ico for browser tab
 // //////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +34,6 @@ function App() {
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       if (user !== null) {
-        console.log(user);
         dispatch(
           userChanged({
             displayName: user.displayName,

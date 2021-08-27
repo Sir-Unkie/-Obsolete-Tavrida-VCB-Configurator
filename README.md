@@ -27,7 +27,7 @@ In addition customers can send a quote for the product to the company.
 
 ## Responsive design
 
-![Responsive design](https://s9.gifyu.com/images/Mygif6.gif)
+![Responsive design](https://i.yapx.ru/N6Wqi.gif)
 
 # Getting Started with Create React App
 

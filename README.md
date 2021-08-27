@@ -27,11 +27,11 @@ In addition customers can send a quote for the product to the company.
 
 ## Responsive design
 
-![Responsive design](https://i.yapx.ru/N6Wqi.gif)
+![Responsive design](https://github.com/Sir-Unkie/Tavrida-VCB-Configurator/blob/master/GIF/Mygif5.gif)
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com//Sir-Unkie/Tavrida-VCB-Configurator/blob/master/GIF/Mygif5.gif).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

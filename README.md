@@ -31,7 +31,7 @@ In addition customers can send a quote for the product to the company.
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com//Sir-Unkie/Tavrida-VCB-Configurator/blob/master/GIF/Mygif5.gif).
 
 ## Available Scripts
 

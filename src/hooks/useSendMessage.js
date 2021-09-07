@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { useEmailJs } from './emailJsHooks/useEmailJs';
+import { EmailJsSend } from '../EmailJS/EmailJsSend';
 
 export const useSendMessage = () => {
   const [status, setStatus] = useState('initial');
   const [alertMessage, setAlertMessage] = useState('');
-  const emailJsSend = useEmailJs();
 
   //   first we need to check if all the values are filled
   const sendMessage = async (values, customerName, customerEmail, VCBcode) => {
@@ -18,7 +17,7 @@ export const useSendMessage = () => {
       setAlertMessage('Sending your message... ');
 
       //   here should be an interface to send data (displayName, email, code)
-      await emailJsSend(customerName, customerEmail, VCBcode);
+      await EmailJsSend(customerName, customerEmail, VCBcode);
       //
 
       setStatus('success');

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './VCBConfigurator.module.scss';
 import CombinedInputs from '../CombinedInputs/CombinedInputs';
 import CustomButton from '../CustomButton/CustomButton';
 import MyInput from '../MyInput/MyInput';
 import VCBImage from '../VCBImage/VCBImage';
-import emailjs from 'emailjs-com';
 import Portal from '../Alert/Portal';
 import Alert from '../Alert/Alert';
+import { useSendMessage } from '../../hooks/useSendMessage';
 
 const VCBConfigurator = ({
   vcbState,
@@ -15,11 +15,10 @@ const VCBConfigurator = ({
   changed,
   CodeTemplate,
 }) => {
-  const [status, setStatus] = useState('initial');
-  const [alertMessage, setAlertMessage] = useState('');
   const values = Object.keys(vcbState).map(key => {
     return vcbState[key].value;
   });
+  const { status, alertMessage, sendMessage } = useSendMessage();
 
   let code;
   switch (CodeTemplate) {
@@ -38,42 +37,10 @@ const VCBConfigurator = ({
   }
 
   const quoteHandler = async () => {
-    const templateParams = {
-      to_name: 'Dmitry',
-      Customer_Name: localStorage.getItem('displayName'),
-      Customer_Email: localStorage.getItem('email'),
-      VCB_Code: code,
-    };
-    //   first we need to check if all the values are filled
-
-    if (values.indexOf('0') !== -1) {
-      alert('Set all the VCB parameters');
-      return;
-    }
-    // if everything is ok send an email
-    try {
-      setStatus('loading');
-      setAlertMessage('Sending your message... ');
-      await emailjs.send(
-        'service_8jxn9mf',
-        'template_it50sht',
-        templateParams,
-        'user_tDawHOAXBaCAXatImtJRc'
-        //   show the pop up with success information or handle an error
-      );
-      setStatus('success');
-      setAlertMessage('Your order is sent successfully.');
-      setTimeout(() => {
-        setStatus('initial');
-      }, 2000);
-    } catch (error) {
-      setStatus('error');
-      setAlertMessage('Something went wrong, the message was not sent!');
-      setTimeout(() => {
-        setStatus('initial');
-      }, 2000);
-    }
-    // console.log(templateParams['VCB_Code']);
+    const customerName = localStorage.getItem('displayName');
+    const customerEmail = localStorage.getItem('email');
+    const VCBcode = code;
+    sendMessage(values, customerName, customerEmail, VCBcode);
   };
   return (
     <React.Fragment>
